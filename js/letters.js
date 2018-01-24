@@ -13,10 +13,29 @@ var counter = {
   "q" : 0,  "r" : 0,  "s" : 0,  "t" : 0,
   "u" : 0,  "v" : 0,  "w" : 0,  "x" : 0,
   "y" : 0,  "z" : 0
-}
+};
 
 function countLetters(counter, sample_text){
-  // FIX ME
+// define base case //  
+  if (sample_text.length === 0){
+    return counter;
+   } 
+// taking each letter //  
+  let count = sample_text.slice(0, 1);
+  console.log(count);
+  
+// takes keys from counter into an array //  
+  let arr = Object.keys(counter);
+  console.log(arr);
+
+  if (arr.indexOf(count) !== -1){
+      console.log(arr.indexOf(count));
+    // console.log(counter[count]++);
+    counter[count]++;
+  }
+
+  return countLetters(counter, sample_text.slice(1));
+
 }
 
 $(document).ready(function(){
